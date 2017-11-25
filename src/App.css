@@ -1,0 +1,41 @@
+.app {
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.header {
+  padding: 20px;
+  color: white;
+}
+
+.header__detective {
+  height: 150px;
+}
+
+.header__title {
+  font-size: 36px;
+  margin-bottom: 0px;
+  font-family: 'Spectral SC', serif;
+  color: #3d74bc;
+}
+
+.mysteries {
+  background: #dcebf7;
+  padding: 10px 20px;
+}
+
+.mysteries__title {
+  font-family: Spectral SC;
+  font-weight: 400;
+}
+
+.mysteries__name {
+  font-family: 'Spectral SC', serif;
+  font-weight: 400;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(61, 116, 188), rgba(0, 0, 0, 0));
+}
