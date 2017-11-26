@@ -8,7 +8,6 @@
 
 # production
 /build
-/api/bin
 
 # misc
 .DS_Store
