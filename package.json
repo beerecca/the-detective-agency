@@ -1,17 +1,18 @@
 {
   "name": "the-detective-agency",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
-  },
-  "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "PORT=3001 node ./bin/www",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
   }
 }
