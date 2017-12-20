@@ -3,9 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prestart": "cd client && yarn build && cd ../",
     "start": "node app.js",
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },
+  "workspaces": [
+    "client"
+  ],
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",

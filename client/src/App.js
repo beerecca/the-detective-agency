@@ -13,11 +13,16 @@ class App extends Component {
 
   render() {
     const { mysteries } = this.state
+    const { title } = this.props
+
+    console.log('title', title);
+    
+
     return (
       <div className="app">
         <header className="header">
           <img src={detective} className="header__detective" alt="Detective" />
-          <h1 className="header__title">The Detective Agency</h1>
+          <h1 className="header__title">{title}</h1>
         </header>
         <div className="mysteries">
           <h2 className="mysteries__title">Closed Cases</h2><hr/>

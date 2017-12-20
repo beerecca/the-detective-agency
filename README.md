@@ -4,8 +4,7 @@ This project was generated with express-generator and create-react-app, and is d
 
 ## Run
 ```
+yarn
 yarn start
-cd client
-yarn build
 ```
-The app will run at [http://localhost:3001/](http://localhost:3001/)
+The app will run at [http://localhost:5000/](http://localhost:5000/)
