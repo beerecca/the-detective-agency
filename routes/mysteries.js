@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
       name: "The Hound of the Baskervilles",
       year: "1902",
       culprit: "Mr Stapleton",
-      quote: "Dr. Mortimer looked strangely at us for an instant, and his voice sank almost to a whisper as he answered: 'Mr Holmes, they were the footprints of s gigantic hound!'",
+      quote: "Dr. Mortimer looked strangely at us for an instant, and his voice sank almost to a whisper as he answered: 'Mr Holmes, they were the footprints of a gigantic hound!'",
     },
     {
       id: 4,
