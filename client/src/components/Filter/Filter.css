@@ -1,0 +1,21 @@
+.filter {
+  background-color: #3d73bc;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.filter:hover {
+  cursor: pointer;
+}
+
+.filter:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.filter--active {
+  background-color: #fff;
+  color: #3d73bc;
+}

@@ -31,7 +31,14 @@ router.get('/', function(req, res, next) {
       year: "1915",
       culprit: "Professor Moriarty",
       quote: "The old wheel turns, and the same spoke comes up. It's all been done before, and will be again."
-    }
+    },
+    {
+      id: 5,
+      name: "A Scandal in Bohemia",
+      year: "1890",
+      culprit: "Irene Adler",
+      quote: "Would she not have made an admirable queen? Is it not a pity she was not on my level?"
+    },
   ]
   res.json(mysteries);
 });

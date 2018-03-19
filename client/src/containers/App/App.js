@@ -1,33 +1,51 @@
-import React, { Component } from 'react' //TODO: prettier to get rid of ;
-import detective from '../../resources/detective.png'
+import React, { Component } from 'react'
 import './App.css'
-import Mystery from '../../components/Mystery/Mystery' //TODO: get rid of double dots
+import Mystery from '../../components/Mystery/Mystery'
 import Header from '../../components/Header/Header'
-import MysteryService from '../../services/mystery-service'
-const mysteryService = new MysteryService(); //should be in component did mount? shouldnt even be a class?
+import Filter from '../../components/Filter/Filter'
+import utils from '../../utils/utils'
+import mysteryService from '../../services/mystery-service'
 
 class App extends Component {
-  state = { mysteries: [] }
+  state = { mysteries: [], filters: [], activeFilter: 'All' }
 
-  componentDidMount() {    
-    mysteryService.getMysteries()
-      .then(mysteries => this.setState({ mysteries }))
+  async componentDidMount() {
+    const mysteries = await mysteryService.getMysteries()
+    this.setState({ 
+      mysteries,
+      filters: utils.getFilters({mysteries})
+    })
   }
 
+  handleFilterClick = (year) => (e) => {
+    this.setState({ activeFilter: year })
+  }
+  
   render() {
-    const { mysteries } = this.state
-    const { title } = this.props
+    const { filters, activeFilter } = this.state
+    const activeMysteries = utils.getActiveMysteries(this.state)
 
     return (
       <div className="app">
-        <Header detective={detective} title={title} />
+        <Header />
+
+        <div className="filters">
+          <p>Filter by year:</p>
+          {['All', ...filters].map(year => {
+            return <Filter 
+              key={year} 
+              year={year} 
+              filterClick={this.handleFilterClick(year)} 
+              isActive={activeFilter === year}/>
+          })}
+        </div>
+        
         <div className="mysteries">
-          <h2 className="mysteries__title">Closed Cases</h2><hr/>
-          {mysteries.map(({id, ...props}) => <Mystery key={id} {...props} />)}
+          {activeMysteries.map(({id, ...props}) => <Mystery key={id} {...props} />)}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

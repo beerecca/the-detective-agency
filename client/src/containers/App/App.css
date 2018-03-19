@@ -1,20 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-}
-
-.app {
   text-align: center;
   font-family: 'PT Sans', sans-serif;
+  background: #dcebf7;
 }
 
 .mysteries {
-  background: #dcebf7;
   padding: 10px 20px;
 }
 
-.mysteries__title {
-  font-family: Spectral SC;
-  font-weight: 400;
+.filters {
+  background: #3d73bc5c;
+  padding: 10px;
+  padding-bottom: 30px;
 }
