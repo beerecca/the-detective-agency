@@ -3,7 +3,7 @@ import './App.css'
 import Mystery from '../../components/Mystery/Mystery'
 import Header from '../../components/Header/Header'
 import Filter from '../../components/Filter/Filter'
-import utils from '../../utils/utils'
+import selectors from '../../utils/selectors'
 import mysteryService from '../../services/mystery-service'
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
     const mysteries = await mysteryService.getMysteries()
     this.setState({ 
       mysteries,
-      filters: utils.getFilters({mysteries})
+      filters: selectors.getFilters({mysteries})
     })
   }
 
@@ -23,7 +23,7 @@ class App extends Component {
   
   render() {
     const { filters, activeFilter } = this.state
-    const activeMysteries = utils.getActiveMysteries(this.state)
+    const activeMysteries = selectors.getActiveMysteries(this.state)
 
     return (
       <div className="app">

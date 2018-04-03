@@ -10,6 +10,6 @@ function getActiveMysteries(state) {
   return activeFilter === 'All' ? mysteries : mysteries.filter(mystery => mystery.year === activeFilter)
 }
 
-const utils = { getFilters, getActiveMysteries }
+const selectors = { getFilters, getActiveMysteries }
 
-export default utils
+export default selectors
