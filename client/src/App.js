@@ -15,9 +15,6 @@ class App extends Component {
     const { mysteries } = this.state
     const { title } = this.props
 
-    console.log('title', title);
-    
-
     return (
       <div className="app">
         <header className="header">
